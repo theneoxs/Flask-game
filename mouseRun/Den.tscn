@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://benis.png" type="Texture" id=1]
+[ext_resource path="res://Den.gd" type="Script" id=2]
+[ext_resource path="res://Fifaks10Dev1.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+outline_size = 9
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 320.0
+height = 358.4
+
+[node name="Den" type="Sprite"]
+scale = Vector2( 0.078125, 0.078125 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1452.0
+margin_top = -51.2
+margin_right = 172.0
+margin_bottom = 76.8
+custom_fonts/font = SubResource( 1 )
+text = "Name"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Moving" type="HTTPRequest" parent="."]
+
+[node name="DenArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DenArea"]
+position = Vector2( 0, 38.4 )
+shape = SubResource( 2 )
